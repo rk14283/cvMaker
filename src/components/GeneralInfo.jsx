@@ -1,6 +1,15 @@
 import React from "react";
 
-function GeneralInfo({ fullNameStatefn }) {
+function GeneralInfo({
+  fullNameStateFn,
+  emailStateFn,
+  phoneNumberStateFn,
+  addressStateFn,
+}) {
+  const [fullname, setFullName] = useState("");
+  const [email, setemail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
   return (
     <>
       <label htmlFor="fullName">Full Name</label>
