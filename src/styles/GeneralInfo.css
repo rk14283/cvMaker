@@ -1,3 +1,16 @@
-hr {
-  border-color: maroon;
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-top: 10px;
+}
+
+form input {
+  margin-bottom: 10px;
+}
+
+form button {
+  margin-top: 20px;
 }
