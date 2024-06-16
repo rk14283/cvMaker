@@ -51,3 +51,41 @@ setSubmitted(true);
    addressStateFn(address);
    submitSetter();
    };
+
+4. schoolName is not a function
+
+solution was, brackets were missing
+function Education({
+schoolStateFn,
+majorStateFn,
+degreeTitlestateFn,
+studyStartDateStateFn,
+studyEndDateStateFn,
+submitSetter,
+})
+
+5. Degree title not defined
+
+degree title state was capital here in the prop
+
+<Education
+        schoolStateFn={setSchoolChange}
+        majorStateFn={setMajorChange}
+        degreeTitleStateFn={setDegreeTitleChange}
+        studyStartDateStateFn={setStudyStartDateChange}
+        studyEndDateStateFn={setStudyEndDateChange}
+        isOngoingStateFn={setIsOngoingChange}
+        submitSetter={submitEducationSetter}
+      />
+
+      was small here
+
+      function Education({
+
+schoolStateFn,
+majorStateFn,
+degreeTitleStateFn,
+studyStartDateStateFn,
+studyEndDateStateFn,
+submitSetter,
+})

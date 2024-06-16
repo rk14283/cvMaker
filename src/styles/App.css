@@ -11,9 +11,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -39,4 +41,71 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* New styles */
+.container {
+  display: flex;
+  position: relative;
+  min-height: 100vh;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-right: 200px; /* Add some padding to separate content from the line */
+  margin-right: 400 px;
+}
+
+.info-section {
+  flex: 0 0 300px;
+  padding-left: 20px;
+}
+
+.vertical-line {
+  width: 2px;
+  background-color: #000;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/* Form styling */
+form {
+  display: flex;
+  flex-direction: column; /* Stack input fields vertically */
+  align-items: flex-start; /* Align labels and inputs to the left */
+  margin: 0 auto;
+  max-width: 400px; /* Set a max width for the form */
+  width: 100%; /* Ensure form takes the full width of its container */
+}
+
+/* Label styling */
+label {
+  margin-top: 1rem; /* Add space above each label */
+  font-weight: bold; /* Make the labels bold */
+}
+
+/* Input field styling */
+input {
+  width: 100%; /* Make input fields take the full width of the form */
+  padding: 0.5rem; /* Add some padding for better readability */
+  margin-top: 0.5rem; /* Add space above each input field */
+  box-sizing: border-box; /* Ensure padding and border are included in the total width */
+}
+
+/* Button styling */
+button {
+  margin-top: 1rem; /* Add space above the button */
+  padding: 0.5rem 1rem; /* Add padding for better readability */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+button + button {
+  margin-left: 1rem; /* Add space between buttons */
 }

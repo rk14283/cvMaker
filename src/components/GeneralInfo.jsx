@@ -84,7 +84,6 @@ function GeneralInfo({
           <button>Edit</button>
         </div>
       </form>
-      <hr />
     </>
   );
 }
