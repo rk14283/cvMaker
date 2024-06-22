@@ -10,8 +10,6 @@ function GeneralInfo({
   addressStateFn,
   status,
   submitSetter,
-  isEditMode, // Add isEditMode prop
-  setIsEditMode, // Add setIsEditMode prop
 }) {
   const [fullname, setFullName] = useState("");
   const [email, setEmail] = useState("");
