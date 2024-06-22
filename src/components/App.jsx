@@ -21,6 +21,7 @@ function App() {
   const [isOngoing, setIsOngoing] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [submittedEducation, setSubmittedEducation] = useState(false);
+  const [isGeneralInfoEditMode, setIsGeneralInfoEditMode] = useState(true);
 
   //General Information
   const setFullNameChange = (value) => {
@@ -45,6 +46,9 @@ function App() {
     } else if (generalInfoStatus == "edit") {
       setGeneralInfo("submitted");
     }
+  };
+  const resetSubmitState = () => {
+    setSubmitted(false);
   };
   //Education
 

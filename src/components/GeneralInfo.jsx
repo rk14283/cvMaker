@@ -10,11 +10,14 @@ function GeneralInfo({
   addressStateFn,
   status,
   submitSetter,
+  isEditMode, // Add isEditMode prop
+  setIsEditMode, // Add setIsEditMode prop
 }) {
   const [fullname, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
+  const [isEditMode, setIsEditMode] = useState(true);
 
   const handleFullNameChange = (e) => {
     setFullName(e.target.value);
@@ -37,6 +40,7 @@ function GeneralInfo({
     phoneStateFn(phone);
     addressStateFn(address);
     submitSetter();
+    setIsEditMode(false); // Update edit mode in App component
   };
 
   return (
@@ -78,7 +82,7 @@ function GeneralInfo({
             onChange={handleAddressChange}
           />
           <div>
-            <button>Submit</button>
+            <button type="submit">Submit</button>
           </div>
         </>
       )}
