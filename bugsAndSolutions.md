@@ -89,3 +89,39 @@ studyStartDateStateFn,
 studyEndDateStateFn,
 submitSetter,
 })
+
+6. Edit button not working
+
+here the problem is the edit is handled in app.jsx not generalInfo.jsx
+
+chat gpt Summary:
+
+The edit mode functionality is managed in App.jsx through the contactStatus state.
+
+Contact.jsx handles the form rendering and submission logic.
+When the form is submitted, it updates the states in App.jsx and toggles the contactStatus via submitSetter.
+
+The Edit button in Contact.jsx allows toggling the form back to an editable state by switching contactStatus to 'edit'.
+
+In essence, App.jsx controls the overall state of the form, while Contact.jsx manages the form's user interface and interactions based on the state provided by App.jsx.
+
+How the edit works
+
+here the magic is through inclusion of pending state in app.jsx
+
+const[contactStatus, setContact] = useState('pending');
+
+and when the status is pending or edit you can edit component in generalInfo.jsx
+
+{(status == 'pending' || status == 'edit') && <>
+<label>Name</label>
+<input key='name' type="text" value={name} required onChange={handleNameChange} />
+<label>Email</label>
+<input key='email' type="email" value={email} required onChange={handleEmailChange} />
+<label>Phone Number</label>
+<input key='phone' type="phone" value={phone} required onChange={handlePhoneChange} />
+
+  <div>
+    <button>Submit</button>
+  </div>
+</>}

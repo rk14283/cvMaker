@@ -6,10 +6,13 @@ import "../styles/App.css";
 import Education from "./Education";
 
 function App() {
+  //hooks for generalInfo
   const [fullname, setFullName] = useState("FullName");
   const [email, setEmail] = useState("Email");
   const [phone, setPhone] = useState("Phone");
   const [address, setAddress] = useState("Address");
+  const [generalInfoStatus, setGeneralInfo] = useState("pending");
+  //hooks for education
   const [school, setSchool] = useState("School Name");
   const [major, setMajor] = useState("Major");
   const [degreeTitle, setDegreeTitle] = useState("");
@@ -35,7 +38,13 @@ function App() {
   };
 
   const submitSetter = () => {
-    setSubmitted(true);
+    if (generalInfoStatus == "pending") {
+      setGeneralInfo("submitted");
+    } else if (generalInfoStatus == "submitted") {
+      setGeneralInfo("edit");
+    } else if (generalInfoStatus == "edit") {
+      setGeneralInfo("submitted");
+    }
   };
   //Education
 
@@ -69,6 +78,7 @@ function App() {
           emailStateFn={setEmailChange}
           phoneStateFn={setPhoneChange}
           addressStateFn={setAddressChange}
+          status={generalInfoStatus}
           submitSetter={submitSetter}
         />
       </div>

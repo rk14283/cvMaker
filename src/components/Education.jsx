@@ -53,7 +53,10 @@ function Education({
 
     submitSetter();
   };
-
+  //event handler needed
+  const handleEditButtonClick = () => {
+    console.log("Edit button pressed");
+  };
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -122,7 +125,9 @@ function Education({
         </div>
 
         <div>
-          <button>Edit</button>
+          <button type="button" onClick={handleEditButtonClick}>
+            Edit
+          </button>
         </div>
       </form>
     </>

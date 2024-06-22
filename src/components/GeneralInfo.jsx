@@ -8,6 +8,7 @@ function GeneralInfo({
   emailStateFn,
   phoneStateFn,
   addressStateFn,
+  status,
   submitSetter,
 }) {
   const [fullname, setFullName] = useState("");
@@ -39,9 +40,9 @@ function GeneralInfo({
   };
 
   return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <legend>Contact Info</legend>
+    <form onSubmit={handleSubmit}>
+      <legend>Contact Info</legend>
+      {(status == "pending" || status == "edit") && (
         <>
           <label>Full Name</label>
           <input
@@ -51,7 +52,6 @@ function GeneralInfo({
             required
             onChange={handleFullNameChange}
           />
-
           <label>Email</label>
           <input
             key="email"
@@ -61,6 +61,7 @@ function GeneralInfo({
             onChange={handleEmailChange}
           />
           <label>Phone Number</label>
+
           <input
             key="phone"
             type="phone"
@@ -80,11 +81,13 @@ function GeneralInfo({
             <button>Submit</button>
           </div>
         </>
+      )}
+      {status === "submitted" && (
         <div>
           <button>Edit</button>
         </div>
-      </form>
-    </>
+      )}
+    </form>
   );
 }
 
